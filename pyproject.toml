@@ -1,0 +1,60 @@
+[project]
+name = "image-chat"
+version = "0.1.0"
+description = "Extract info from images using text"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "anthropic>=0.18.0",
+    "fastapi>=0.109.0",
+    "huggingface-hub>=0.20.0",
+    "langgraph>=0.2.0",
+    "numpy>=1.24.0,<2.0.0",
+    "opencv-python-headless>=4.8.0",
+    "open-clip-torch>=2.24.0",
+    "openai>=1.0.0",
+    "pillow>=10.0.0",
+    "pydantic>=2.5.0",
+    "python-dotenv>=1.0.0",
+    "requests>=2.31.0",
+    "supervision>=0.22.0",
+    "timm>=0.9.0",
+    "torch>=2.2.0,<2.3.0",
+    "torchvision>=0.17.0,<0.18.0",
+    "transformers>=4.57.0",
+    "uvicorn[standard]>=0.27.0",
+    "einops>=0.8.1",
+    "scikit-image>=0.25.2",
+    "gradio>=5.49.1",
+]
+
+[tool.uv]
+# Support both Apple Silicon (arm64) and Intel (x86_64) Macs
+
+[tool.pytest.ini_options]
+# Test discovery patterns
+python_files = "test_*.py"
+python_classes = "Test*"
+python_functions = "test_*"
+
+# Test paths
+testpaths = ["tests"]
+
+# Output options
+addopts = [
+    "-v",
+    "--tb=short",
+    "--strict-markers",
+    "--disable-warnings",
+]
+
+# Markers
+markers = [
+    "asyncio: mark test as an async test",
+    "slow: mark test as slow running",
+    "integration: mark test as an integration test",
+]
+
+# Async configuration
+asyncio_mode = "auto"
+asyncio_default_fixture_loop_scope = "function"
