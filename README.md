@@ -2,6 +2,10 @@
 
 Extract information from images using text - an interactive chat interface powered local models.  
 
+<p align="center">
+  <img src="./static/detection.png" alt="Description" width="1000"/>
+</p>
+
 ## Quick Start
 
 ### Setup
@@ -22,6 +26,8 @@ ollama pull qwen2.5:3b
 ```
 
 ### Run  
+
+Launch the ollama in the background.  
 
 **Terminal 1** - Start MCP server:
 ```bash
